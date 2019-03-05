@@ -1,0 +1,15 @@
+{
+  "apps": [{
+    "name": "profile",
+    "script": "production.js",
+    "cwd": "C:\Users\Shinelon\Desktop\将要做的项目\myprofile\profile",
+    "exec_mode": "fork",
+    "max_memory_restart": "1G",
+    "autorestart": true,
+    "node_args": [],
+    "args": [],
+    "env": {
+      
+    }
+  }]
+}
