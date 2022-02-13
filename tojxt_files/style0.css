@@ -1,0 +1,84 @@
+body {
+  margin: 0 auto;
+  background: #000;
+  overflow: hidden;
+}
+
+.particle_star {
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 17px 4px wheat;
+  border-radius: 50%;
+}
+
+.container {
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  overflow: hidden;
+  /* background-size: 100% auto; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../bg_img/bg.jpg");
+  /* background-image: url("../bg_img/bg2.jpg"); */
+  /* background-image: url("../bg_img/bg3.jpg"); */
+  /* background-image: url("../bg_img/bg4.jpg"); */
+  /* background-image: url("../bg_img/bg6.jpg"); */
+  /* background-image: url("../bg_img/bg7.jpg"); */
+  /* background-image: url("../bg_img/bg8.jpg"); */
+  /* background-image: url("../bg_img/bg9.jpg"); */
+  /* background-image: url("../bg_img/bg10.jpg"); */
+  /* background-image: url("../bg_img/bg11.jpg"); */
+  background-position-x: center;
+}
+
+/*满天星播放器*/
+
+audio {
+  z-index: 5;
+  position: absolute;
+  bottom: 0;
+  opacity: 0.1;
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  -ms-transition: all 2s;
+  -o-transition: all 2s;
+  transition: all 2s;
+}
+
+audio:hover {
+  opacity: 1;
+}
+
+/* 打字 */
+.blink {
+  animation: blink 0.5s infinite;
+  animation-delay: 500ms;
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
+
+.typing {
+  display: flex;
+  top: 10%;
+  left: 4%;
+  z-index: 999999 !important;
+  position: fixed !important;
+}
+
+.header-sub-title,
+h2 {
+  font-weight: 600;
+  font-size: 40px;
+  /* color: #f96f3c; */
+  color: rgb(6, 178, 247);
+  padding-right: 0.1em;
+  text-transform: uppercase;
+}
