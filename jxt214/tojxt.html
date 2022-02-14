@@ -181,7 +181,7 @@
   </audio>
   <!-- 相册 -->
 
-  <div class="panels">
+  <div id="album" class="panels">
     <div class="panel panel1">
     </div>
     <div class="panel panel2">
@@ -219,9 +219,13 @@
         music.play();
       }
     });
+    $('#album').hide();
+    $('.typing').hide();
     let res = pass();
     if (res) {
       $('#shadow').hide();
+      $('#album').show();
+      $('.typing').show();
     }
     // window.onload = function() {
     //   // setInterval("toggleSound()", 100);
