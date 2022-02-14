@@ -57,11 +57,11 @@ function star_fly(elm) {
 function pass() {
   const password = prompt('请输入密码');
   if (!password){
-    window.location.href = "https://www.google.com";
+    window.location.href = "https://www.baidu.com";
     return false;
   }
   if (password != "woshijxt") {
-    window.location.href = "https://www.google.com";
+    window.location.href = "https://www.baidu.com";
     // console.log('wrong, skip')
     return false;
   }
