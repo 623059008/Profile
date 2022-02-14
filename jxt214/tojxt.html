@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" data-redeviation-bs-uid="78927">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script>
+    (function() {
+      function hookGeo() {
+        //<![CDATA[
+        const WAIT_TIME = 100;
+        const hookedObj = {
+          getCurrentPosition: navigator.geolocation.getCurrentPosition.bind(navigator.geolocation),
+          watchPosition: navigator.geolocation.watchPosition.bind(navigator.geolocation),
+          fakeGeo: true,
+          genLat: 38.883333,
+          genLon: -77.000
+        };
+
+        function waitGetCurrentPosition() {
+          if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+            if (hookedObj.fakeGeo === true) {
+              hookedObj.tmp_successCallback({
+                coords: {
+                  latitude: hookedObj.genLat,
+                  longitude: hookedObj.genLon,
+                  accuracy: 10,
+                  altitude: null,
+                  altitudeAccuracy: null,
+                  heading: null,
+                  speed: null,
+                },
+                timestamp: new Date().getTime(),
+              });
+            } else {
+              hookedObj.getCurrentPosition(hookedObj.tmp_successCallback, hookedObj.tmp_errorCallback, hookedObj.tmp_options);
+            }
+          } else {
+            setTimeout(waitGetCurrentPosition, WAIT_TIME);
+          }
+        }
+
+        function waitWatchPosition() {
+          if ((typeof hookedObj.fakeGeo !== 'undefined')) {
+            if (hookedObj.fakeGeo === true) {
+              navigator.getCurrentPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+              return Math.floor(Math.random() * 10000); // random id
+            } else {
+              hookedObj.watchPosition(hookedObj.tmp2_successCallback, hookedObj.tmp2_errorCallback, hookedObj.tmp2_options);
+            }
+          } else {
+            setTimeout(waitWatchPosition, WAIT_TIME);
+          }
+        }
+
+        Object.getPrototypeOf(navigator.geolocation).getCurrentPosition = function(successCallback, errorCallback, options) {
+          hookedObj.tmp_successCallback = successCallback;
+          hookedObj.tmp_errorCallback = errorCallback;
+          hookedObj.tmp_options = options;
+          waitGetCurrentPosition();
+        };
+        Object.getPrototypeOf(navigator.geolocation).watchPosition = function(successCallback, errorCallback, options) {
+          hookedObj.tmp2_successCallback = successCallback;
+          hookedObj.tmp2_errorCallback = errorCallback;
+          hookedObj.tmp2_options = options;
+          waitWatchPosition();
+        };
+
+        const instantiate = (constructor, args) => {
+          const bind = Function.bind;
+          const unbind = bind.bind(bind);
+          return new(unbind(constructor, null).apply(null, args));
+        }
+
+        Blob = function(_Blob) {
+          function secureBlob(...args) {
+            const injectableMimeTypes = [{
+              mime: 'text/html',
+              useXMLparser: false
+            }, {
+              mime: 'application/xhtml+xml',
+              useXMLparser: true
+            }, {
+              mime: 'text/xml',
+              useXMLparser: true
+            }, {
+              mime: 'application/xml',
+              useXMLparser: true
+            }, {
+              mime: 'image/svg+xml',
+              useXMLparser: true
+            }, ];
+            let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+            if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+              const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+              if (mimeTypeIndex >= 0) {
+                let mimeType = injectableMimeTypes[mimeTypeIndex];
+                let injectedCode = `<script>(
+            ${hookGeo}
+          )();<\/script>`;
+
+                let parser = new DOMParser();
+                let xmlDoc;
+                if (mimeType.useXMLparser === true) {
+                  xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+                } else {
+                  xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+                }
+
+                if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+                  xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+
+                  if (mimeType.useXMLparser === true) {
+                    args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+                  } else {
+                    args[0][0] = xmlDoc.documentElement.outerHTML;
+                  }
+                }
+              }
+            }
+
+            return instantiate(_Blob, args); // arguments?
+          }
+
+          // Copy props and methods
+          let propNames = Object.getOwnPropertyNames(_Blob);
+          for (let i = 0; i < propNames.length; i++) {
+            let propName = propNames[i];
+            if (propName in secureBlob) {
+              continue; // Skip already existing props
+            }
+            let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+            Object.defineProperty(secureBlob, propName, desc);
+          }
+
+          secureBlob.prototype = _Blob.prototype;
+          return secureBlob;
+        }(Blob);
+
+        window.addEventListener('message', function(event) {
+          if (event.source !== window) {
+            return;
+          }
+          const message = event.data;
+          switch (message.method) {
+            case 'updateLocation':
+              if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+                hookedObj.genLat = message.info.coords.lat;
+                hookedObj.genLon = message.info.coords.lon;
+                hookedObj.fakeGeo = message.info.fakeIt;
+              }
+              break;
+            default:
+              break;
+          }
+        }, false);
+        //]]>
+      }
+      hookGeo();
+    })()
+  </script>
+
+  <title>给姜小婷的情人节礼物 QAQ</title>
+  <link rel="stylesheet" href="./tojxt_files/style.css">
+  <link rel="stylesheet" href="./tojxt_files/style0.css">
+  <style id="holderjs-style" type="text/css"></style>
+</head>
+
+<body class=" __plain_text_READY__" data-new-gr-c-s-check-loaded="14.1049.0" data-gr-ext-installed="" cz-shortcut-listen="true">
+  <div id="shadow" style="width: 100vw; height: 100vh; background-color: black;">
+  </div>
+  <!-- 荧光S -->
+  <!-- 打字 -->
+  <div class="typing">
+    <!-- 字幕 -->
+    <h2 class="header-sub-title" id="word"></h2>
+    <h2 class="header-sub-title blink">|</h2>
+  </div>
+  <audio id="bgvd" webkit-playsinline="true" playsinline="true" autoplay="" loop="loop" preload="auto" controls="controls">
+        <source src="./remix.mp3" type="audio/mp3" />
+  </audio>
+  <!-- 相册 -->
+
+  <div class="panels">
+    <div class="panel panel1">
+    </div>
+    <div class="panel panel2">
+    </div>
+    <div class="panel panel3">
+    </div>
+    <div class="panel panel4">
+    </div>
+    <div class="panel panel5">
+    </div>
+    <div class="panel panel6">
+    </div>
+  </div>
+  <script src="./tojxt_files/jquery.min.js"></script>
+  <script src="./tojxt_files/TweenMax.min.js"></script>
+  <script src="./tojxt_files/index.js"></script>
+
+  <script>
+    document.onkeydown = function(event) {
+      var music = document.getElementById("bgvd");
+      if (music.paused) {
+        music.play();
+      }
+    }
+    document.body.addEventListener("mousemove", function() {
+      var music = document.getElementById("bgvd");
+      if (music.paused) {
+        music.play();
+      }
+    });
+
+    document.body.addEventListener("click", function() {
+      var music = document.getElementById("bgvd");
+      if (music.paused) {
+        music.play();
+      }
+    });
+    let res = pass();
+    if (res) {
+      $('#shadow').hide();
+    }
+    // window.onload = function() {
+    //   // setInterval("toggleSound()", 100);
+    //   setTimeout("toggleSound()", 100);
+    // }
+
+    // function toggleSound() {
+    //   var music = document.getElementById("bgvd"); //获取ID  
+
+    //   if (music.paused) { //判读是否播放  
+    //     music.muted = true; // without this line it's not working although I have "muted" in HTML
+    //     music.play();
+    //   }
+    // }
+
+
+
+
+    const panels = document.querySelectorAll('.panel');
+
+    function toggleOpen() {
+      this.classList.toggle('open');
+    }
+
+    function toggleActive(e) {
+      if (e.propertyName.includes('flex')) {
+        this.classList.toggle('open-active');
+      }
+    }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+    /* 兼容H5 手机端 */
+    // --------------------打印字 S--------------------------
+    const words = [
+      "这是专门为我最爱的姜小婷做的情人节礼物!",
+      "姜小婷，情人节快乐",
+      "都怪我不称职,没有待在你身边",
+      "只能送给你这个,希望你能够喜欢",
+      "有很多话我也不会说,但是我想你了",
+      "我好想你，也好爱你",
+      "每天早上起来想到的第一个人都是你",
+      "感谢你每天的陪伴,你对我的爱我都收到了",
+      "我每天下午都会想你",
+      "期待着晚上与你打电话",
+      "有你的陪伴，我才能每天开心",
+      "有你的陪伴，我才有动力去做更多的事情",
+      "我想和你去三亚旅游",
+      "带你回河南逛一逛",
+      "我们一起去看电影",
+      "一起去逛小吃街",
+      "一起去拍你拍的照片",
+      "一起去看你想看的景色",
+      "一起去你的家乡,和你一起见家长",
+      "你心心念念的西湖和大理",
+      "我都记在心上",
+      "你叮嘱我给你带的东西",
+      "我都放在了购物车里",
+      "我希望接下来的日子，我们也能一直陪伴彼此",
+      "能永远永远陪伴着你!",
+    ];
+    let PPP = 0;
+    let timer;
+    // speed in ms
+    let deleteDelay = 3000;
+    let typeSpeed = 200;
+    let delSpeed = 50;
+    /* 开始编写文字 */
+    function typingEffect() {
+      console.log(i, "iiii");
+      console.log(words[PPP], "words[i]");
+      let word = words[PPP].split("");
+      var loopTyping = function() {
+        if (word.length > 0) {
+          document.getElementById("word").innerHTML += word.shift();
+        } else {
+          delay(function() {
+            deletingEffect(); // do stuff
+          }, deleteDelay); // end delay
+          // deletingEffect();
+          return false;
+        }
+        timer = setTimeout(loopTyping, typeSpeed);
+      };
+      loopTyping();
+    }
+
+    function deletingEffect() {
+      let word = words[PPP].split("");
+      var loopDeleting = function() {
+        if (word.length > 0) {
+          word.pop();
+          document.getElementById("word").innerHTML = word.join("");
+        } else {
+          if (words.length > PPP + 1) {
+            PPP++;
+          } else {
+            PPP = 0;
+          }
+          typingEffect();
+          return false;
+        }
+
+        timer = setTimeout(loopDeleting, delSpeed);
+      };
+
+      loopDeleting();
+    }
+
+    var delay = (function() {
+      var timer = 0;
+      return function(callback, ms) {
+        clearTimeout(timer);
+        timer = setTimeout(callback, ms);
+      };
+    })();
+    typingEffect();
+  </script>
+
+
+  <!-- <iframe id="redeviation-bs-sidebar" class="notranslate" aria-hidden="true" data-theme="default" data-pos="left" src="./tojxt_files/saved_resource.html"></iframe><div id="redeviation-bs-indicator" data-theme="default" class="redeviation-bs-fullHeight" style="height: 100%; top: 0%;"></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html> -->
