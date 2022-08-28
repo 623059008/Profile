@@ -1,7 +1,7 @@
 # Profile
 This is a curriculum vitae about me.
 
-It's deployed at [here](http://storygame.top:8360/)
+It's deployed at [here](https://623059008.github.io/Profile/)
 
 
 > Power by ThinkJS
