@@ -20,29 +20,30 @@ Research Assistant, Full Stack Engineer
 
 08.2021-Present
 
-1. Worked in Dr. Dan Ding's Human Engineering Research Laboratories focused on disability rehabilitation research with information systems on embedded devices like Apple Watch and Fitbit, helping 1000+ patients in their medical recovery.
-2. Developed the information system for disability rehabilitation research including data collection on the cloud, data analysis, data visualization, and rehabilitation training using React, React Native, Node.js, MySQL, Redis, and Amazon Elastic Compute Cloud. 
-3. Provided researchers with the low-code modularized App platform (visually develop) to generate customized disability rehabilitation Apps on related research for specific data collecting devices and experimental designs, enabling 5 organizations including UPMC to conduct rehabilitation-related research and projects.
+•	Contributed to Dr. Dan Ding's Human Engineering Research Laboratories, which specializes in disability rehabilitation research with information systems on embedded devices like Apple Watch and Fitbit, assisting over 1000 patients in their medical recovery.
+•	Developed an information system for disability rehabilitation research that includes cloud-based data collection, data analysis, data visualization and rehabilitation training using React, React Native, Node.js, MySQL, Redis and Amazon Elastic Compute Cloud. 
+•	Provided researchers with a low-code modularized App platform for visually developing customized disability rehabilitation Apps for specific data collecting devices and experimental designs. This platform enabled 5 organizations, including UPMC, to conduct rehabilitation-related research and projects.
+
 
 #### Ansys Inc.                                                                                           
 Full Stack Software Engineer Internship, Digital Twin
 
 05.2022-08.2022
 
-1. Developed a Twin Deployer App with Python Tornado Web Services, TypeScript, Vue, Quasar, Electron, and Swagger for modeling, simulating, and analyzing virtual system prototypes. 
-2. Transformed the Electron App to Browser mode with the custom-building process and Webpack configurations for better solving the compatibility problems under different operating system environments like Ubuntu, Windows, and other embedded systems.
-3. Replaced file operations in Electron mode by implementing new Vue components and APIs which are compatible with browsers and developed the functions including open project, import project, recent project, and import library.
-4. Using Python to develop Data Classes and Models for RESTful APIs under the ideology of Dependency Injection and Object-oriented Programming.
+•	Developed a Twin Deployer App that utilizes Python Tornado Web Services, TypeScript, Vue, Quasar, Electron and Swagger for modeling, simulating and analyzing virtual system prototypes. 
+•	Converted the Electron App to Browser mode by using custom-building processes and Webpack configurations to enhance compatibility across different operating system environments such as Ubuntu, Windows and embedded systems.
+•	Implemented new Vue components and APIs to replace file operations in Electron mode, making them compatible with browsers, and added functions including opening projects, importing projects, viewing recent projects and importing libraries.
+•	Employed types, schemas and validators in Pydantic to develop Data Classes and Models for RESTful APIs using the principles of Dependency Injection and Object-oriented Programming.
 
 #### Ant Group, Alibaba                                                      
 Software Development Engineer, Alipay Mobile Technology
 
 07.2020-06.2021
 
-1. Led the development of the low-code build platform for dynamic shop templates using React, Redux, Ant Design, Less.js, and Node.js helping 200+ financial institutions to build their financial shops on Alipay Financial Shop and producing 200K content pages.
-2. Developed live-streaming components and backend services for Alipay Financial Live using React, Birdnest Native (like React Native), Node.js, and Java to achieve over $1.5 million in sales on the fund, FOF, and bond products for our financial clients in the 2020 fiscal year.
-3. Migrated the low-code build platform to OceanBase, resulting in improved 50% service quality and enhanced performance.
-4. Communicated proactively with product managers, other engineers, and financial institutions (our clients) to establish the infrastructure of the live-streaming ecosystem, including a fund products recommendation system, discount & coupons system, and content distribution platform.
+•	Spearheaded the development of a low-code build platform by using React, Redux, Ant Design, Less.js, and Node.js, which enabled over 200 financial institutions to effortlessly build their financial shops on Alipay and create more than 200,000 content pages.
+•	Utilized React, Birdnest Native (like React Native), and Node.js to develop live-streaming components and backend services for Alipay Financial Live, resulting in over $1.5 million in sales on the fund, FOF, and bond products for our financial clients in the 2020 fiscal year.
+•	Improved the low-code build platform’s service quality and performance by 50% through its migration to OceanBase.
+•	Proactively collaborated with product managers, engineers, and financial institutions (our clients) to establish the infrastructure of the live-streaming ecosystem, including a recommendation system for fund products, discount and coupons system, and a content distribution platform.
 
 ### EDUCATION BACKGROUND
 #### University of Pittsburgh, United States

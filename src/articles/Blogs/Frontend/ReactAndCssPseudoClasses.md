@@ -78,8 +78,8 @@ But once in CSS you declare the pseudo-classes, you can only get it by [Window.g
 
 My React version
 
+### `index.jsx`
 ```jsx
-# index.jsx
 /**
  * @author Tempest
  * @email tar118@pitt.edu
@@ -133,9 +133,8 @@ FlipButton.propTypes = {
 
 export default FlipButton;
 ```
-CSS file
+### `index.css`
 ```css
-# index.css
 .flip-switch {
   font-family: inherit;
   -webkit-font-smoothing: antialiased;
