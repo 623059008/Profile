@@ -2,7 +2,7 @@
  * @author Tempest
  * @email tar118@pitt.edu
  * @create date 2022-09-02 15:21:40
- * @modify date 2022-10-31 20:25:54
+ * @modify date 2023-03-02 18:44:43
  * @desc format link
  */
 import config from '../config';
@@ -50,6 +50,8 @@ export function getUrlParameters () {
 
 // a weak external validation
 export const externalValidator = (url) => {
+  // url is undefined
+  if (!url) return false;
   const externalPrefixList = ['http', 'https', 'www', 'ftp', 'mailto', 'tel', 'ssh', 'git', 'data:'];
   return externalPrefixList.filter((prefix) => url.startsWith(prefix)).length > 0;
 }
