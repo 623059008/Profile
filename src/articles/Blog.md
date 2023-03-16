@@ -34,6 +34,7 @@
 ### Python
 
 - [Use Python to print colorfully](?page=Blogs/Python/Use_Python_to_print_colorfully)
+- [An experience on GPT-4](?page=Blogs/Python/PyPDFMerger.md)
 
 ### HTML/CSS
 
