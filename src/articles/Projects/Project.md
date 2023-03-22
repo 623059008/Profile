@@ -11,7 +11,7 @@
   </svg> 
   A static, configurable, update by markdown, deploy on Github Page blog using React. Try it by yourself, 5 mins to set up your own concise markdown blog 🚀🚀🚀.
 
-<a href="https://github.com/623059008/ConciseMarkDownBlog"><img style="margin-left:20px" src="https://github-readme-stats-623059008.vercel.app/api/pin/?username=623059008&repo=ConciseMarkDownBlog" alt="Concise Markdown Blog Github repo thumbnail" /></a>
+<!-- <a href="https://github.com/623059008/ConciseMarkDownBlog"><img style="margin-left:20px" src="https://github-readme-stats-623059008.vercel.app/api/pin/?username=623059008&repo=ConciseMarkDownBlog" alt="Concise Markdown Blog Github repo thumbnail" /></a> -->
 
 
 
@@ -51,7 +51,7 @@
   </svg>
   A game teaches players what algorithm practise looks like. A triplet matching casual game. Hope you enjoy the Triplet erasing and learn some algorithm knowledge. Vite+Eletron, released on [itch](https://temepst-666.itch.io/happy-triple-elimation-programming-algorithm)
 
-<a href="https://github.com/623059008/HappyTripleElimationProgramming"><img style="margin-left:20px" src="https://github-readme-stats-623059008.vercel.app/api/pin/?username=623059008&repo=HappyTripleElimationProgramming" alt="TripletErasingGame" /></a>
+<!-- <a href="https://github.com/623059008/HappyTripleElimationProgramming"><img style="margin-left:20px" src="https://github-readme-stats-623059008.vercel.app/api/pin/?username=623059008&repo=HappyTripleElimationProgramming" alt="TripletErasingGame" /></a> -->
 
 - [PythonCVDetection](https://github.com/623059008/PythonCVDetection): 
   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="24">
@@ -83,7 +83,7 @@
   </svg>
   An e-book flip player implemented by React and Canvas Updating with 60fps, also provides a version implemented by jQuery (not playable but flipable with animation, one-click flip) in jquery-impl branch.
 
-<a href="https://github.com/623059008/ebookflip"><img style="margin-left:20px" src="https://github-readme-stats-623059008.vercel.app/api/pin/?username=623059008&repo=ebookflip" alt="eBookFlip" /></a>
+<!-- <a href="https://github.com/623059008/ebookflip"><img style="margin-left:20px" src="https://github-readme-stats-623059008.vercel.app/api/pin/?username=623059008&repo=ebookflip" alt="eBookFlip" /></a> -->
 
 - [Mintal](https://github.com/623059008/mintal): 
   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="24">
@@ -104,11 +104,11 @@
   </svg>
   A web application that provides questionnaire and psychotherapy advice for people who suffered from mental health problems, made for Pitt Hackathon
 
-<a href="https://github.com/623059008/mintal"><img style="margin-left:20px" src="https://github-readme-stats-623059008.vercel.app/api/pin/?username=623059008&repo=mintal" alt="Mintal" /></a>
+<!-- <a href="https://github.com/623059008/mintal"><img style="margin-left:20px" src="https://github-readme-stats-623059008.vercel.app/api/pin/?username=623059008&repo=mintal" alt="Mintal" /></a> -->
 
 ### Academic Researches
 
-- [Autopilot2PytorchSteering](https://github.com/623059008/Autopilot2PytorchSteering): A Pytorch implementation of Autopilot2 to determine the steering angle. For ATC’23 Robotic Environmental Dynamics(only part of module, may be open-source after publication), a pending paper under review.
+- [Autopilot2PytorchSteering](https://github.com/623059008/Autopilot2PytorchSteering): A Pytorch implementation of Autopilot2 to determine the steering angle. For Robotic Environmental Dynamics(only part of module, may be open-source after publication), a pending paper under review.
 
 - [Taming Accessibility Issues in Web Application for the Disabled](https://drive.google.com/file/d/1OeUMlKKRzQRxBwwlv_h6faJBbqWykii8/view?usp=sharing): How to find and fix the web accessibility problems automatically? Look at my [Web Patch Tool](https://github.com/623059008/ApplyPatchOnWeb)
 
@@ -143,10 +143,12 @@
 ## Github Status
 <div style="display:flex;flex-direction:row;justify-content:space-around;">
 <a href="https://github.com/623059008">
-  <img src="https://github-readme-stats-623059008.vercel.app/api?username=623059008" />
+  <!-- <img src="https://s2.loli.net/2023/03/23/ZqIR1z58XgcBAkn.png" alt="UsedLanguages" /> -->
+  <img src="https://s2.loli.net/2023/03/23/mFvOHY3DKzLJkXb.png" alt="UsedLanguages">
 </a>
 <a href="https://github.com/623059008">
-  <img src="https://github-readme-stats-623059008.vercel.app/api/top-langs/?username=623059008&layout=compact" />
+  <!-- <img src="https://github-readme-stats-623059008.vercel.app/api/top-langs/?username=623059008&layout=compact" alt="GithubStatus" /> -->
+  <img src="https://s2.loli.net/2023/03/23/ZqIR1z58XgcBAkn.png" alt="GithubStatus">
 </a>
 </div>
 
