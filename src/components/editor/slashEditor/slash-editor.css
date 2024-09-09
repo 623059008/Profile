@@ -1,0 +1,11 @@
+.editor {
+  padding: 0 calc((100% - 731px) / 2);
+  height: 100%;
+}
+
+#editorjs {
+  height: 100%;
+  width: 100%;
+  max-width: 731px;
+  margin: 0 auto;
+}

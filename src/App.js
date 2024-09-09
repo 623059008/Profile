@@ -2,7 +2,7 @@
  * @author Tempest
  * @email tar118@pitt.edu
  * @create date 2022-08-31 14:40:35
- * @modify date 2023-02-19 18:03:59
+ * @modify date 2023-03-05 19:13:49
  * @desc App
  */
 import React, { useEffect, useState } from 'react';
@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import config from './config';
 import Article from './components/article';
 import MarkDownEditor from './components/editor/editor';
-// import MarkDownEditor from './components/editor/slashEditor';
+import NewEditor from './components/editor/slashEditor/slashEditor';
 import Header from './components/header';
 import { getUrlParameters, formatPage } from './util/url';
 import { compareLowerCase } from './util/str';
@@ -53,7 +53,7 @@ const App = () => {
           {!config.markdown.enable
             ? <Article />
             : (compareLowerCase(page, 'Markdown')
-                ? <MarkDownEditor />
+                ? <NewEditor />
                 : <Article />)
           }
         </div>
